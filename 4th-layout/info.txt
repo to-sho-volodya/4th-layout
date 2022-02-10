@@ -1,0 +1,2 @@
+В папці Source - макети
+#source - js and scss

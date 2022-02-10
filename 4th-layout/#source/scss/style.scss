@@ -1,0 +1,967 @@
+@import 'nullstyle';
+ //open-sans-regular - latin_cyrillic
+
+@import 'font_face';
+
+%contentWidth{
+  width: 1220px;
+  padding: 0 15px;
+}
+%mobileContentWidth{
+  width: 290px;
+  padding: 0 15px;
+}
+%tplDisplayFlex{
+  display: flex;
+}
+
+$background_color_1: #ffffff;
+$background_color_2: #f7f7f7;
+$background_color_3: #3199dc;
+$button_color: #2f7bb8;
+
+
+
+
+body{
+  font-size: 16px;
+  font-family: 'Open Sans';
+  }
+
+  header{
+    //height: 100px;
+    width: 100%;
+    background-color: $background_color_1;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 1010;
+  }
+
+
+  .header_container{
+    @extend %tplDisplayFlex;
+    @extend %contentWidth;
+    justify-content: flex-end;
+    height: 100%;
+    //margin: 0 auto;
+    justify-content: space-between;
+
+
+
+    .header_logo{
+      margin: auto 0;
+      z-index: 1;
+    }
+    img{
+      width: 80px;
+      height: 80px;
+    }
+
+    .header_menu {
+      display: flex;
+      align-items: center;
+
+      .menu_body{
+        @media (max-width: 320px){
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          background-color: #fff;
+          padding: 80px 15px 250px 15px;
+          line-height: 45px;
+          font-size: 30px;
+          transition: left 0.3s ease 0s;
+          .menu_list{
+            flex-direction: column;
+            //justify-content: center;
+            //align-items: center;
+               li button{
+                color: #fff;
+                background-color: #2f7bb8;
+                //border-radius: 50px;
+                height: 40px;
+                width: 138px;
+                font-size: 17px;
+              }
+            }
+          }
+        }
+      .header:target .menu_body{
+        left: 0;
+      }
+
+      }
+      .menu_btn{
+        @media (max-width: 320px){
+          background-color: #2f7bb8;
+          padding: 10px 15px;
+          border-radius: 10px;
+          z-index: 1;
+          .close_icon_menu:before,
+          .close_icon_menu:after {
+            content: "";
+            background-color: #000000;
+            height: 2px;
+            transform-origin: 0 0;
+          }
+          .close_icon_menu:before{
+            transform: rotate(33deg);
+          }
+          .close_icon_menu:after{
+            transform: rotate(-33deg);
+          }
+        }
+      }
+      .icon_menu{
+        display: none;
+        @media (max-width: 320px){
+          display: block;
+          span{
+            display: block;
+            width: 35px;
+            height: 5px;
+            background-color: #fff;
+            margin: 6px 0;
+          }
+        }
+      }
+
+
+
+
+      nav{
+        ul {
+          display: flex;
+          align-items: center;
+          height: 40px;
+          .button{
+            color: #fff;
+            background-color: $button_color;
+            border-radius: 50px;
+            height: 40px;
+            width: 139px;
+          }
+        }
+
+        li{
+          margin-left: 40px;
+        }
+
+        li:first-child{
+          margin-left: 0px;
+        }
+
+        a:visited{
+          color: #000;
+        }
+      }
+    }
+
+
+/*------------------------------*/
+  .main{
+    background-color: chocolate;
+
+  }
+
+    .lending {
+      background-color: $background_color_2;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .lending_box {
+        @extend %tplDisplayFlex;
+        @extend %contentWidth;
+        margin: 0 auto;
+
+        @media (max-width: 320px) {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+        }
+        .shortInfo {
+          width: 50%;
+          margin: auto 0px;
+
+          h2 {
+            font-size: 33px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+
+          p {
+            display: block;
+            text-align: center;
+            max-width: 497px;
+            min-width: 290px;
+            margin: 0 auto;
+            line-height: 35px;
+          }
+        }
+
+        .apply {
+          h3{
+            font-size: 25px;
+            color: #000;
+            margin: 120px 0px 20px 0px;
+            font-weight: bold;
+          }
+
+          form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            p{
+              align-self: flex-start;
+              color: #9d94bd;
+              a{
+                color: #6899db;
+              }
+            }
+          }
+
+          input.field {
+            margin-bottom: 15px;
+            width: 590px;
+            height: 52px;
+            border: 1px solid #bbbbbb;
+            border-radius: 6px;
+            color: green;
+            display: block;
+            @media (max-width: 320px) {
+              margin-bottom: 15px;
+              width: 290px;
+              height: 40px;
+              border: 1px solid #bbbbbb;
+              border-radius: 6px;
+              color: green;
+              display: block;
+            }
+          }
+
+          input::placeholder{
+            padding-left: 10px;
+          }
+
+          input:focus{
+            -webkit-box-shadow: 0px 5px 24px 0px rgba(43, 122, 182, 0.38);
+            -moz-box-shadow: 0px 5px 24px 0px rgba(43, 122, 182, 0.38);
+            box-shadow: 0px 5px 24px 0px rgba(43, 122, 182, 0.38);
+            border: 1px solid #3199dc;
+          }
+          p{
+            padding: 20px 0px;
+          }
+          //.check{
+          //  width: 13px;
+          //}
+
+          button {
+            color: #fff;
+            background-color: $button_color;
+            border-radius: 50px;
+            height: 51px;
+            width: 368px;
+            text-transform: uppercase;
+          }
+
+          span {
+            color: red;
+          }
+
+        }
+
+      }
+    }
+
+
+    .course_program{
+      width: 100%;
+      background-color: $background_color_1 ;
+      height: 563px;
+      display: flex;
+      justify-content: center;
+
+        .course_program_box {
+          max-width: 1220px;
+          padding: 0 15px;
+          min-width: 290px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          .main_title {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            h2 {
+              font-size: 30px;
+            }
+          }
+
+          .programs {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+              div{
+
+              }
+              .block{
+                //margin-right: 70px;
+              }
+
+              .block:last-child{
+                margin-right: 0px;
+              }
+
+            /* Slider */
+            .slick-slider {
+              //text-align: center;
+
+            }
+
+            /* Slider initialized */
+            .slick-slider.slick-initialized {
+            }
+
+            /* Slider dotted*/
+            .slick-slider.slick-dotted {
+            }
+
+            /* Ограничивающая оболочка */
+            .slick-list {
+              overflow: hidden;
+              height: 380px;
+            }
+
+            /* Лента слайдов */
+            .slick-track {
+              display: flex;
+            }
+
+            /* Слайд */
+            .slick-slide {
+            }
+
+            /* Слайд активный (показывается) */
+            .slick-slide.slick-active {
+            }
+
+            /* Слайд основной */
+            .slick-slide.slick-current {
+            }
+
+            /* Слайд по центру */
+            .slick-slide.slick-center {
+            }
+
+            /* Клонированный слайд */
+            .slick-slide.slick-cloned {
+            }
+
+            /* Стрелка */
+            .slick-arrow {}
+
+            /* Стрелка влево */
+            .slick-arrow.slick-prev {}
+
+            /* Стрелка вправо */
+            .slick-arrow.slick-next {}
+
+            /* Стрелка не активная */
+            .slick-arrow.slick-disabled {
+            }
+
+            /* Точки (булиты) */
+            .slick-dots {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .slick-dots li {
+              list-style: none;
+              margin: 0px 10px;
+            }
+
+            .slick-dots button {
+              font-size: 0;
+              width: 10px;
+              height: 10px;
+              background-color: #000;
+            }
+
+            /* Активная точка */
+            .slick-dots li.slick-active button{
+              background-color: transparent;
+              border: 1px solid #000;
+            }
+
+            /* Элемент точки */
+            .slick-dots li button {
+              font-size: 0;
+              width: 10px;
+              height: 10px;
+              background-color: #c5c5c5;
+              border-radius: 50%;
+            }
+          }
+
+
+          .picture {
+            //display: flex;
+            //justify-content: center;
+
+            img {
+              margin-bottom: 10px;
+            }
+          }
+
+          .title {
+            //display: flex;
+            //justify-content: center;
+
+            h2 {
+              text-align: center;
+              width: 240px;
+              border-bottom: 1px solid #3199dc;
+              margin-bottom: 25px;
+              padding-bottom: 15px;
+              color: #666666;
+            }
+          }
+
+
+          .paragraph {
+            p {
+              text-align: center;
+              color: #a4a4a4;
+            }
+          }
+
+          .wordpress {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            //width: 350px;
+          }
+
+          .drupal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            //width: 350px;
+          }
+
+          .testing {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            //width: 350px;
+          }
+        }
+
+    }
+
+    .statistic{
+      background-color: $background_color_3;
+      width: 100%;
+      height: 310px;
+      display: flex;
+      justify-content: center;
+        .statistic_box{
+          //@extend %contentWidth;
+          max-width: 1220px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          @media (max-width: 320px) {
+            //@extend %mobileContentWidth;
+            min-width: 290px;
+          }
+
+            .statistic_block{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              height: 140px;
+              justify-content: space-between;
+            }
+            .statistic_number{
+              font-size: 20px;
+            }
+
+            .statistic_number, .statistic_paragraph{
+              color:white;
+            }
+
+        }
+    }
+
+    .course_reviews{
+      display: none;
+      justify-content: center;
+      background-color: $background_color_1;
+      //height: 527px;
+      padding-top: 30px;
+      .course_reviews_block {
+        //@extend %contentWidth;
+        max-width: 1220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .quote_title{
+          font-size: 32px;
+        }
+        .quote{
+          max-width: 980px;
+          min-width: 290px;
+          //height: 300px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          //position: relative;
+          padding: 0px 50px;
+          //margin-top: 10px;
+          color: #666666;
+        }
+
+
+
+        .blockquote {
+          text-align: center;
+          position: relative;
+          padding: 16px 60px;
+          margin: 16px 0px;
+          line-height: 28px;
+
+          i.fa{
+            font-size: 30px;
+            position: absolute;
+            color: #c5c5c5;
+          }
+          i.fa-quote-left{
+            left: 18px;
+            top: -10px;
+          }
+
+          i.fa-quote-right{
+            left: 825px;
+            top: 105px;
+          }
+        }
+        .blockquote:before,
+        .blockquote:after {
+          font-family: Arial;
+          position: absolute;
+          top: 30px;
+          right: 10px;
+          color: #BFE2FF;
+          font-size: 100px;
+          line-height: 100px;
+        }
+
+        .blockquote cite {
+          color: #303030;
+          font-size: 15px;
+          padding-top: 10px;
+          display: block;
+          .position{
+            font-size: 14px;
+            font-style: italic;
+            color: #a8a9a9;
+          }
+        }
+
+          /* Slider */
+          .slick-slider {
+            //text-align: center;
+
+          }
+
+          /* Slider initialized */
+          .slick-slider.slick-initialized {
+          }
+
+          /* Slider dotted*/
+          .slick-slider.slick-dotted {
+          }
+
+          /* Ограничивающая оболочка */
+          .slick-list {
+            overflow: hidden;
+            height: 380px;
+          }
+
+          /* Лента слайдов */
+          .slick-track {
+            display: flex;
+          }
+
+          /* Слайд */
+          .slick-slide {
+          }
+
+          /* Слайд активный (показывается) */
+          .slick-slide.slick-active {
+          }
+
+          /* Слайд основной */
+          .slick-slide.slick-current {
+          }
+
+          /* Слайд по центру */
+          .slick-slide.slick-center {
+          }
+
+          /* Клонированный слайд */
+          .slick-slide.slick-cloned {
+          }
+
+          /* Стрелка */
+          .slick-arrow {}
+
+          /* Стрелка влево */
+          .slick-arrow.slick-prev {}
+
+          /* Стрелка вправо */
+          .slick-arrow.slick-next {}
+
+          /* Стрелка не активная */
+          .slick-arrow.slick-disabled {
+          }
+
+          /* Точки (булиты) */
+          .slick-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .slick-dots li {
+            list-style: none;
+            margin: 0px 10px;
+          }
+
+          .slick-dots button {
+            font-size: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+          }
+
+          /* Активная точка */
+          .slick-dots li.slick-active button{
+            background-color: transparent;
+            border: 1px solid #000;
+          }
+
+          /* Элемент точки */
+          .slick-dots li button {
+            font-size: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #c5c5c5;
+            border-radius: 50%;
+          }
+
+
+      }
+    }
+
+    .video{
+      background-color: $background_color_2;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 35px;
+
+      .video_box{
+        @extend %contentWidth;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (max-width: 320px) {
+          p{
+            display: none;
+          }
+          iframe{
+            width: 100%;
+            height: 400px;
+          }
+        }
+        .title{
+          height: 130px;
+          padding-top: 70px;
+          font-size: 30px;
+          color: #000;
+          h2{
+            font-size: 30px;
+            color: #000;
+          }
+        }
+
+        .description{
+          margin-bottom: 40px;
+          p{
+            text-align: center;
+            line-height: 24px;
+            color: #666666;
+          }
+        }
+
+      }
+    }
+
+    .mentors{
+      background-color: $background_color_1 ;
+      //height: 614px;
+      //display: flex;
+      //justify-content: center;
+      //align-content: center;
+      //min-width: 0;
+
+      h2{
+        font-size: 30px;
+        height: 150px;
+        padding-top: 80px;
+        text-align: center;
+      }
+
+
+      .mentors_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+
+        .mentors_title{
+          font-size: 30px;
+          height: 70px;
+        }
+        .mentor{
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          //min-height: 400px;
+
+          .mentor_img{
+            //margin-right: 106px;
+            img{
+              @media (max-width: 320px) {
+                width: 90px;
+              }
+
+            }
+          }
+
+          .mentor_description{
+            //display: flex;
+            //flex-direction: column;
+
+            .name{
+              color: #3199dc;
+              border-bottom: 2px solid #f7f7f7;
+              padding-bottom: 10px;
+              margin-bottom: 20px;
+            }
+            .description{
+              color: #a3a3a3;
+              max-width: 550px;
+              min-width: 290px;
+              line-height: 25px;
+            }
+          }
+        }
+        /* Slider */
+        .slick-slider {
+          //text-align: center;
+        }
+
+        /* Slider initialized */
+        .slick-slider.slick-initialized {
+        }
+
+        /* Slider dotted*/
+        .slick-slider.slick-dotted {
+        }
+
+        /* Ограничивающая оболочка */
+        .slick-list {
+          overflow: hidden;
+          //height: 380px;
+        }
+
+        /* Лента слайдов */
+        .slick-track {
+          display: flex;
+        }
+
+        /* Слайд */
+        .slick-slide {
+        }
+
+        /* Слайд активный (показывается) */
+        .slick-slide.slick-active {
+        }
+
+        /* Слайд основной */
+        .slick-slide.slick-current {
+        }
+
+        /* Слайд по центру */
+        .slick-slide.slick-center {
+        }
+
+        /* Клонированный слайд */
+        .slick-slide.slick-cloned {
+        }
+
+        /* Стрелка */
+        .slick-arrow {}
+
+        /* Стрелка влево */
+        .slick-arrow.slick-prev {}
+
+        /* Стрелка вправо */
+        .slick-arrow.slick-next {}
+
+        /* Стрелка не активная */
+        .slick-arrow.slick-disabled {
+        }
+
+        /* Точки (булиты) */
+        .slick-dots {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .slick-dots li {
+          list-style: none;
+          margin: 0px 10px;
+        }
+
+        .slick-dots button {
+          font-size: 0;
+          width: 10px;
+          height: 10px;
+          background-color: #000;
+        }
+
+        /* Активная точка */
+        .slick-dots li.slick-active button{
+          background-color: transparent;
+          border: 1px solid #000;
+        }
+
+        /* Элемент точки */
+        .slick-dots li button {
+          font-size: 0;
+          width: 10px;
+          height: 10px;
+          background-color: #c5c5c5;
+          border-radius: 50%;
+          margin-top: 15px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+
+    .location{
+      height: 400px;
+    }
+
+    .contacts{
+      background-color: $background_color_3;
+      height: 196px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @media (max-width: 320px){
+        height: auto;
+      }
+
+      .contacts_box{
+        //@extend %contentWidth;
+        max-width: 1220px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+
+        @media (max-width: 320px) {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          padding: 10px 15px;
+        }
+
+        .left-block,
+        .right-block{
+          display: flex;
+          flex-direction: column;
+        }
+        .fa {
+          font-size: 51px;
+          color: white;
+        }
+        .contacts_block{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
+          height: 140px;
+          justify-content: space-between;
+        }
+
+
+        .contacts_type{
+          font-size: 20px;
+        }
+
+        .contacts_value{
+          font-size: 12px;
+        }
+
+        .contacts_type, .contacts_value{
+          p{color:white;}
+          a{ color:white;}
+         }
+
+      }
+    }
+
+
+footer{
+  background-color: $background_color_2 ;
+  height: 156px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    .footer_container{
+      @extend %contentWidth;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      a{
+        color: #709eca;
+        margin-bottom: 20px;
+      }
+      p{
+        color: #666666;
+      }
+  }
+}
+
