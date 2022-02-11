@@ -88,7 +88,7 @@ body{
             }
           }
         }
-      .header:target .menu_body{
+       .menu_body:target{
         left: 0;
       }
 
@@ -171,6 +171,11 @@ body{
       width: 100%;
       display: flex;
       justify-content: center;
+      
+      @media (max-width: 320px) {
+
+        padding-top: 90px;
+      }
 
       .lending_box {
         @extend %tplDisplayFlex;
@@ -267,6 +272,10 @@ body{
             height: 51px;
             width: 368px;
             text-transform: uppercase;
+
+            @media (max-width: 320px) {
+              width:150px;
+            }
           }
 
           span {
@@ -483,6 +492,7 @@ body{
           @media (max-width: 320px) {
             //@extend %mobileContentWidth;
             min-width: 290px;
+
           }
 
             .statistic_block{

@@ -6,6 +6,14 @@ $(document).ready(function () {
     infinite: false,
     arrows: false,
     dots:true,
+    responsive:[
+      {
+        breakpoint: 315,
+        settings: {
+          dots: false,
+        }
+      }
+    ]
     // fade: true,
     // adaptiveHeight:true,
     // draggable:true,
